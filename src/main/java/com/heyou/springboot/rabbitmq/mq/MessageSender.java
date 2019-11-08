@@ -20,7 +20,7 @@ public class MessageSender implements RabbitTemplate.ConfirmCallback,RabbitTempl
 
     public void send(String exchange,String routingKey){
         String context ="现在是"+new Date();
-        System.out.println("send content="+context);
+        System.out.println("消息内容是："+context);
         this.rabbitTemplate.setMandatory(true);
         this.rabbitTemplate.setConfirmCallback(this);
         this.rabbitTemplate.setReturnCallback(this);

@@ -23,4 +23,17 @@ public class MessageController {
         msgSender.send("exchange1","routingkey1");
         return "success";
     }
+
+    @RequestMapping("/boot/send2")
+    public String send2(){
+        msgSender.send("exchange2","");
+        return "success";
+    }
+
+    @RequestMapping("/boot/send3")
+    public String send3(){
+        //#:匹配多个单词，*匹配一个单词
+        msgSender.send("exchange3","aa.abc.k.a.b");
+        return "success";
+    }
 }
